@@ -1,0 +1,62 @@
+第八章　サイドバーの作成とCSSの編集
+
+１、詳細度
+　スタイルの指定が重複した時にどのスタイルを優先するかというルール。
+
+♦️詳細度の大きい(優先度の高い)セレクター順
+　Inline style … （<p style="">）
+　IDセレクタ … （#red）
+　疑似クラス … （:nth-child(n)、:hover このあとの項目で説明します）
+　クラスセレクタ … （.blue）
+　要素型セレクタ … （ p{...}、h1{...}）
+　全称セレクタ … （ *{...}）
+
+　詳細度はwebページ内で一定に保つことが適切とされている。
+　そのため、一番使いやすいクラスセレクタを使うことが一般的。
+
+-----------------------------------------------------------
+２、擬似クラスを適用する
+
+♦️:last-child
+　要素が特定の状態になった場合にのみ適用されるCSS。
+
+　(例)
+　.popular-text:last-child, .categories-text:last-child {
+  margin: 0;
+  padding: 0;
+  border: none;
+　}
+
+　上記の場合は、「popular-textとcategories-textの中で、
+　最後に記述された要素のみに適用する」という意味。
+
+
+♦️:nth-child( )
+　「偶数」、「奇数」、「n番目の要素のみ」、「n番目以降の要素に」といった具合に、
+　　特定して装飾できるようになる。
+
+(例)
+.instagram-box:nth-child(odd) {
+  margin: 0 10px 10px 0;
+}
+.instagram-box:nth-child(1) {
+  background-image: url(img/airport.jpg);
+}
+
+「instagram-boxクラスの奇数のみ」
+「instagram-boxクラスの一番目」の要素に対して、
+ スタイルを適用させている.
+
+
+♦️代表的な擬似クラス
+　a:hover {color:red;}　         リンクにマウスカーソルが乗っている状態
+　a:active {color:red;}　        リンクをクリックしている状態
+　p:first-child {color:red;}　   最初に出てくるpタグ
+　li:nth-child(odd){color:red}　 奇数番目のliタグ
+　li:nth-child(even){color:red}　偶数番目のliタグ
+　li:nth-child(2){color:red}　　　n番目のliタグ(この場合は２番目)
+
+
+
+♦️marginは縦方向の余白が相殺される
+♦️paddingは相殺されない
