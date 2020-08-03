@@ -1,5 +1,88 @@
 第七章　メイン部分の作成
 
-１、
+１、メイン部分のタグ
+
+♦️<main>タグ
+　ページ内の中心的なコンテンツを表すときに使う。
+　main要素内には、Webページのメインコンテンツにしたい要素すべてを収めるようにする。
+
+<main class="main clearfix">
+  ♦️<section class="blog">
+	  <h2 class="blog-headline">Recent Blogs</h2>
+	</section>
+	  <div class="sidebar"></div>　←メイン部分全て<main>タグ内に入れる
+</main>
+
+
+♦️<section>タグ
+　ページや記事の一部分を表すタグ。
+　<section>タグ内には必ず見出し要素（<h1>タグなど）が必要。
+　<div>タグと使い分けが必要。
+
+(例)
+<section>
+  <h1>サンプル1</h1>
+  <!-- これはsectionタグの正しい使用方法です。
+  子要素にhタグを含む場合はdivタグではなく、sectionタグを使います -->
+</section>
+
+<div>
+  <h1>サンプル2</h1>
+  <!-- これはdivタグの不適切な使用方法です。
+  子要素にhタグを含む場合はdivタグではなく、sectionタグを使いましょう -->
+</div>
 
 ---------------------------------------------------------------
+２、行の高さを設定するプロパティ
+
+♦️line-height: ●●px;　ピクセルサイズで設定
+♦️line-height: ●●;    行内で使用するフォントサイズを1とした倍率で行の高さを設定。
+
+(例)
+h2 {
+  line-height: 40px;
+  /* 文字の行の高さは40pxになる */
+
+  line-height: 1.5;
+  /* h2のフォントサイズが10pxの場合、行の高さは1.5倍（15px）になる */
+}
+
+---------------------------------------------------------------
+３、カテゴリーに背景色を適用する
+
+♦️<span>タグ：インライン要素
+　　テキストの一部を囲んでCSSを適用する
+　　<p>タグ内などで部分的にスタイルシートを適用する際によく使われる。
+
+
+(<span>タグのCSS例)
+.category {
+	display: inline-block;
+	padding: 5px 8px;
+	background-color: #acabab;
+	border-radius: 3px;
+	color: #fff;
+	font-s
+
+♦️border-radius: ●●px;
+　<span>タグで作った領域の四辺の角を丸くしたいときに使うプロパティ。
+　角の半径を、pxや%などの単位を付けて指定します。50%を指定すると、正円になる。
+
+　(例)
+.sample {
+  /* 要素の形を正円にする */
+  border-radius: 50%;
+
+  /* 少しだけ角を丸める */
+  border-radius: 3px;
+}
+
+
+♦️<img>タグ：インライン要素。srcで画像を指定する。
+　<img class="blog-image" src="img/forest.jpg">
+
+
+
+
+
+
