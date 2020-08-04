@@ -1,0 +1,33 @@
+第十章　確認問題
+
+問1
+レスポンシブ対応とは、次のうちのどれを指すでしょう。
+
+スマートフォン対応
+タブレット対応
+プリンター対応
+テレビ対応
+
+A=全て
+
+
+問2
+viewportの設定に必要なcontent属性値を、次の中から2つ選んでください。
+
+UTF-8
+initial-scale=1.0
+width=device-width
+minimum-scale=0.7
+
+A=initial-scale=1.0, width=device-width
+
+
+問3
+mediaqueriesの宣言文で正しいのは、次のうちどれでしょう。
+
+media screen and (max-width: 768px)
+@media screen and(max-width: 768px)
+@media screen and (max-width: 768px)
+@media screen (max-width: 768px)
+
+A=@media screen and (max-width: 768px)
