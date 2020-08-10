@@ -1,0 +1,32 @@
+Rails　第三章　確認問題
+
+問１
+仮想環境のあるディレクトリまでの移動方法として、正しいものはどれですか。
+（現在、デスクトップにいるものとします）
+
+a. cd vagrant/work
+b. vagrant/work
+c. cd work/vagrant
+d. work/vagrant
+A=c
+
+
+問２
+仮想環境をシャットダウンさせるコマンドはどれですか。
+
+a. vagrant up
+b. vagrant halt
+c. vagrant reload
+d. vagrant suspend
+A=b
+
+
+問３
+次のうち、間違っているものはどれですか。
+
+a. コントローラを作成するコマンドは、「rails g controller コントローラ名」である。
+b. ルーティングの記述方法は、「HTTPメソッド 'URL' => 'アクション#コントローラ名'」である。
+c. Railsサーバを起動するコマンドは、「rails s -b 0.0.0.0」である。
+d. アプリケーションのひな形を作るコマンドは、「rails new アプリケーション名」である。
+
+A=b
