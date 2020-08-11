@@ -1,0 +1,30 @@
+Rails 第五章　確認問題
+
+問1
+ストロングパラメータの正しい書き方はどれですか。
+
+a. def list_params
+ 　　params.require(:テーブル名).permit(:カラム名１, :カラム名２...)
+ 　end
+b. def list_params
+ 　　params.require(:モデル名).permit(:カラム名１, :カラム名２...)
+ 　end
+c. def list_params
+ 　　params.permit(:カラム名１, :カラム名２...).require(:モデル名)
+ 　end
+d. def list_params
+ 　　params.permit(:カラム名１, :カラム名２...).require(:テーブル名)
+ 　end
+
+A=b
+
+
+問2
+「新規投稿用のフォームを作成するときに使う機能」について、正しいものはどれですか。
+
+a. 「form_for」である。
+b. 「createアクション」である。
+c. 「getメソッド」である。
+d. 「listメソッド」である。
+
+A=a
