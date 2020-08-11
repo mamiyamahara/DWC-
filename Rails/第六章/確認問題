@@ -1,30 +1,70 @@
-Rails 第五章　確認問題
+Rails 第６章　確認問題
 
-問1
-ストロングパラメータの正しい書き方はどれですか。
+問１
+正しいものはどれですか。モデルはListモデルとします。
 
-a. def list_params
- 　　params.require(:テーブル名).permit(:カラム名１, :カラム名２...)
- 　end
-b. def list_params
- 　　params.require(:モデル名).permit(:カラム名１, :カラム名２...)
- 　end
-c. def list_params
- 　　params.permit(:カラム名１, :カラム名２...).require(:モデル名)
- 　end
-d. def list_params
- 　　params.permit(:カラム名１, :カラム名２...).require(:テーブル名)
- 　end
+a. すべてのデータを取り出すメソッドは、List.allメソッドである。
+b. すべてのデータを取り出すメソッドは、List.findメソッドである。
+c. すべてのデータを取り出すメソッドは、List.titleメソッドである。
+d. すべてのデータを取り出すメソッドは、List.bodyメソッドである。
 
-A=b
+A=a
 
 
-問2
-「新規投稿用のフォームを作成するときに使う機能」について、正しいものはどれですか。
+問２
+ループ処理の正しい書き方はどれですか。
 
-a. 「form_for」である。
-b. 「createアクション」である。
-c. 「getメソッド」である。
-d. 「listメソッド」である。
+a. <%= @lists.each do |list| %>
+　　タイトル
+　　<%= list.title %>
+　<% end %>
+
+b. <%= @lists.each do |lists| %>
+　　タイトル
+　　<% list.title %>
+　<% end %>
+
+c. <% @lists.each do |list| %>
+　　タイトル
+　　<%= list.title %>
+　<% end %>
+
+d. <% @lists.each do |lists| %>
+　　タイトル
+　　<%= list.title %>
+　<% end %>
+
+A=c
+
+
+問3
+投稿データは、URLの/todolists/:idに含まれるidで判別するようにしました。この「:id」に入っている値をアクション内で取得するには、どれが正しいでしょうか。
+
+a. def show
+　　@list = List.find.params[:id]
+　end
+
+b. def show
+　　@list = List.find[params[:id]]
+　end
+
+c. def show
+　　@list = List.find[:id]
+　end
+
+d. def show
+　　@list = List.find(params[:id])
+　end
+
+A=d
+
+
+問4
+投稿一覧画面から詳細画面へのリンクを作成する方法は、どれが正しいでしょうか。
+
+a. <%= link_to 表示するテキスト, "リンク先URL" %>
+b. <%= link_to リンク先URL, "表示するテキスト" %>
+c. <% link_to 表示するテキスト, "リンク先URL" %>
+d. <% link_to リンク先URL, "表示するテキスト" %>
 
 A=a
