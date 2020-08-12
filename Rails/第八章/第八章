@@ -1,0 +1,49 @@
+第８章　画像投稿機能を作ろう
+
+[gemで画像投稿機能を作る]
+①使いたいgem名を「Gemfile」内に追記する（Railsアプリのルートフォルダ直下にある）
+・gem "gemファイル名"
+・画像投稿用のgem「Refile：リファイル」
+・サイズ調整など画像加工を行うgem（MiniMagick）
+
+
+②ターミナルでbundle installコマンドを実行する。
+コマンド実行後にgemが使えるようになる
+
+
+③image_idカラムを追加する
+カラム名は、「image_id」のようにidを付けて設定します。
+カラムに追加するマイグレーションファイルを作成し、データベースを変更します。データ型は文字列型です。
+$ rails g migration Addカラム名Toテーブル名 カラム名:データ型
+
+
+④データベースに反映させる
+$ rails db:migrate
+
+
+⑤attachmentメソッドを追加する
+attachment（アタッチメント）メソッドとは、refileが指定のカラムにアクセスするために必要です。
+これによりDBに存在する画像を取得したりアップロードが可能となります。
+♦️カラム名はimage_idですが、ここでは_idをつけません。
+
+app/models/list.rb
+class List < ApplicationRecord
+  attachment :image
+end
+
+
+⑥Strong Parametersをコントローラーに追加する
+
+
+⑥viewに画像用のフィールドを追加する
+<%= f.attachment_field :image %>
+
+
+⑦attachment_image_tagを埋め込む
+画像の幅を:fillで指定し、高さをpxで指定しています。
+また、表示する画像の拡張子をformatで指定しています。
+
+ <p>画像</p>
+  <%= attachment_image_tag list, :image, :fill, 100, 100, format: 'jpeg' %><% end %>
+
+
