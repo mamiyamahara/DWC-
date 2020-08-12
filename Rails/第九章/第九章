@@ -1,0 +1,20 @@
+第９章　削除機能を作ろう
+
+[destroyアクションを追加して削除機能を作る]
+①ルーティングを書く(HTTPメソッドは「delete」)
+HTTPSメソッド　'URL/:id' => 'コントローラー名#アクション名', as: 'URL名前'
+
+②コントローラーにアクション追加
+def destroy
+  ローカル変数 = モデル名.find(parames[:id])
+  カラム名.destroy
+  redirect_to URL
+
+③viewで削除ボタンを作る
+♦️link_toでHTTPメソッドを指定しない場合は、GETメソッドで設定されます（デフォルト値）。
+♦️destroyアクションのHTTPメソッドはDELETEなので、
+　<%=link_to '表示するテキスト', URL, method: :delete %>として、
+　method: :delete　を書く事でdeleteメソッドを指定する。
+♦️"data-confirm"で削除確認ダイアログも作成できる。
+<%= link_to "削除", destroy_todolist_path(@list.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+
