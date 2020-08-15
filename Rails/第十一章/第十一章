@@ -1,0 +1,12 @@
+第１１章　HTML/CSS追加
+
+⭐️「white-space: nowrap;」
+　テキストを折り返し表示させないようにするプロパティ
+⭐️「text-overflow: ellipsis;」
+　領域をはみ出したテキストを三点リーダー（...）で省略表示するプロパティ
+
+[display]
+block⇒要素が横までいっぱいに広がり、縦に並んでいく
+inline⇒要素が平ぺったく横に並んでいく
+inline-block⇒blockとinlineの中間
+none⇒非表示になる
