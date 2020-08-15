@@ -1,0 +1,42 @@
+
+[コントローラとアクションをまとめて作成する]
+Rails g controller コントローラー名 アクション名 new edit
+
+[ルーティングを自動作成する]
+indexからdestroyまでの7つのアクションのことを、RESTfulなURL
+resourcesメソッドを利用すると、このRESTfulなURLを自動で設定してくれます。
+
+routes.rbファイル内には、コントローラ作成時に4アクションの設定値が自動的に追記されています。
+下記の4つのget行を削除してください。
+
+get 'blogs/index'
+get 'blogs/show'
+get 'blogs/new'
+get 'blogs/edit'
+get行を削除できたら、改めて、以下の1行を追加しましょう。
+この1行を追加するだけで、indexからdestroyまでの7つのルーティングが定義されます。
+
+config/routes.rb
+Rails.application.routes.draw do
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+
+  ♦️resources :blogs　コレ！！
+
+end
+
+
+[ルーティングを確認する]
+routes.rbファイルで定義したルーティングは、rails routesコマンドで確認できます。
+
+$ rails routes
+
+
+[画像用フォルダの作成]
+Railsでは、app/assets/imagesフォルダに格納します。
+今回は、imagesフォルダ内にさらにimgフォルダを作成し、その中に画像を格納します。
+
+
+
+
+
