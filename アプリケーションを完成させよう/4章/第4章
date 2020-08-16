@@ -1,0 +1,8 @@
+[each ループ文]
+<%= link_to post.title, post_path(post) %>
+
+<% @posts.each do |post| %>
+<% end %>
+
+・<% %>rubyのコードを実行するのみ
+・<%= %>rubyのコードを実行し、viewに出力

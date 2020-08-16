@@ -1,0 +1,24 @@
+4-6 確認問題
+
+問1
+edit画面のform_forに関して、正しいものはどれでしょうか。
+なお、newや editに用意しているインスタンスは@blogで、form_forでは@blogを使用することと設定します。
+
+　a. newに用意したform_forと、完全に同じものを使用できる。
+　b. text_fieldやtext_areaの部分のみを書き換える。
+　c. submitボタンにedit用の記述を追加しなければならない。
+
+A=a
+
+
+問2
+redirect_to blog_path(blog)
+上記の場合、アクセス先は次のどれでしょうか。
+なお、ルーティングは、resources :blogsで定義済とします。
+
+　a. blogs#show
+　b. blogs#edit
+　c. blogs#update
+　d. blogs#index
+
+A=a
